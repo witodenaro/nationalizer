@@ -1,6 +1,6 @@
 {
   "name": "nationalizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prompt nationality by a list of names",
   "main": "dist/index.js",
   "scripts": {
