@@ -19,7 +19,7 @@ interface NationalizedName {
 }
 
 interface PublicNationalizerServiceInterface {
-  nationalize(fullNames: FullName[]): Promise<any>;
+  nationalize(fullNames: FullName[]): Promise<NationalizedName[]>;
 }
 
 class NationalizerService implements PublicNationalizerServiceInterface {
