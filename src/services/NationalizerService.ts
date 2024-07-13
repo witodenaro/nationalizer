@@ -72,9 +72,11 @@ class NationalizerService implements PublicNationalizerServiceInterface {
       lastNameNationalities
     );
 
+    const nationalities = this.sortByProbability(combinedResults);
+
     return {
       fullName,
-      nationalities: combinedResults,
+      nationalities,
     };
   }
 
@@ -109,6 +111,10 @@ class NationalizerService implements PublicNationalizerServiceInterface {
         probability,
       })
     );
+  }
+
+  sortByProbability(nationalities: CountryResult[]) {
+    return nationalities.sort((a, b) => b.probability - a.probability);
   }
 }
 

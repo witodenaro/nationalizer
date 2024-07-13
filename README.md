@@ -21,18 +21,28 @@ const fullNames = [
   { firstName: 'Marie', lastName: 'Curie' }
 ];
 
-NationalizerService.nationalize(fullNames)
-  .then((nationalizedNames) => {
-    console.log(nationalizedNames);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+NationalizerService.nationalize(fullNames);
 ```
 
 API
 
 ```typescript
+interface FullName {
+  id?: string;
+  firstName: string;
+  lastName: string;
+}
+
+interface NationalizedName {
+  fullName: FullName;
+  nationalities: CountryResult[];
+}
+
+export type CountryResult = {
+  country_id: COUNTRY_ID; // 2-letter country code (e.g. US, UK)
+  probability: number;
+};
+
 nationalize(fullNames: FullName[]): Promise<NationalizedName[]>
 ```
 

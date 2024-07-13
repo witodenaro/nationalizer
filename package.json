@@ -1,10 +1,11 @@
 {
   "name": "nationalizer",
   "version": "1.0.0",
-  "description": "Prompt nationality by name, or a list of names",
+  "description": "Prompt nationality by a list of names",
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "vitest --run --coverage --coverage.provider=istanbul",
+    "precommit": "vitest --run",
     "test": "vitest",
     "build": "tsc"
   },
@@ -13,7 +14,12 @@
     "url": "git+https://github.com/witodivaro/nationalizer.git"
   },
   "keywords": [
-    "Nationalize.io"
+    "Nationalize.io",
+    "nationalizer",
+    "nationalize",
+    "nationalize-io",
+    "name-nationality",
+    "nationality-detection"
   ],
   "author": "witodivaro <witodivaro@gmail.com>",
   "license": "ISC",
