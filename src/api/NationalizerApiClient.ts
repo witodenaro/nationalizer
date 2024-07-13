@@ -9,9 +9,7 @@ class NationalizerApiClient {
   async fetchMany(names: string[]) {
     const query = names.map((name) => `name[]=${name}`).join('&');
 
-    const { data } = await this.api.get<NationalityResponse>('/', {
-      params: query,
-    });
+    const { data } = await this.api.get<NationalityResponse>('/?' + query);
 
     return data;
   }
